@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Cotizaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Ingrese las Cotizaciones</h1>
+        <form id="cotizacionesForm">
+            <label for="dolarCompra">U$S Compra:</label>
+            <input type="number" id="dolarCompra" name="dolarCompra" step="0.001" required>
+
+            <label for="dolarVenta">U$S Venta:</label>
+            <input type="number" id="dolarVenta" name="dolarVenta" step="0.001" required>
+
+            <label for="euroCompra">Euro Compra:</label>
+            <input type="number" id="euroCompra" name="euroCompra" step="0.001" required>
+
+            <label for="euroVenta">Euro Venta:</label>
+            <input type="number" id="euroVenta" name="euroVenta" step="0.001" required>
+
+            <label for="realCompra">Real Compra:</label>
+            <input type="number" id="realCompra" name="realCompra" step="0.001" required>
+
+            <label for="realVenta">Real Venta:</label>
+            <input type="number" id="realVenta" name="realVenta" step="0.001" required>
+
+            <label for="argentinoCompra">Arg Compra:</label>
+            <input type="number" id="argentinoCompra" name="argentinoCompra" step="0.001" required>
+
+            <label for="argentinoVenta">Arg Venta:</label>
+            <input type="number" id="argentinoVenta" name="argentinoVenta" step="0.001" required>
+
+            <button type="submit" id="enviarBtn">Enviar</button>
+            <button type="button" id="editarBtn">Editar</button>
+            <button type="button" id="imprimirBtn">Imprimir</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

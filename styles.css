@@ -1,0 +1,706 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    background: linear-gradient(#0056b3, #f0f4f8);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.form-container, .content {
+    width: 90%;
+    max-width: 600px;
+    margin: 2vh auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 96vh;
+}
+
+.form-container h1, .content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container label, .form-container input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-container label {
+    font-weight: bold;
+}
+
+.form-container input[type="number"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.form-container button:hover {
+    background-color: #004494;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin: auto;
+    font-weight: bolder;
+}
+
+.titulo { 
+    font-size: 6rem;
+    color: #ffffff;
+    margin: 0;
+    
+}
+.logovarlix{
+    width: 100px; 
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+    
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vh;
+}
+
+.fullscreen-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 0;
+}
+
+.cotizaciones-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out;
+}
+
+.cotizaciones-section.active {
+    opacity: 1;
+}
+
+.slider-section {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out;
+}
+
+.slider-section.active {
+    opacity: 1;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.fila {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 20px;
+    margin-bottom: 1vh;
+}
+
+.flag {
+    width: 8vw;
+    height: auto;
+    margin-right: 30px;
+}
+
+.cotizacion {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dolar {
+    font-size: 3.5rem;
+    font-weight: bolder;
+    font-stretch: extra-expanded;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#euro, #real, #argentino {
+    font-size: 4rem;
+    font-weight: bolder;
+    font-stretch: extra-expanded;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.numero {
+    font-size: 5rem;
+    font-weight: bolder;
+    color: #00477f;
+    margin: 0 10px;
+}
+
+.animacion {
+    perspective: 1000px;
+    margin-bottom: 2vh;
+}
+
+.text-3d {
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: #004494;
+    color: #00477f;
+    animation: rotate 10s infinite linear;
+    text-align: center;
+}
+
+@keyframes rotate {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    25% { transform: rotateX(5deg) rotateY(90deg); }
+    50% { transform: rotateX(5deg) rotateY(180deg); }
+    75% { transform: rotateX(5deg) rotateY(270deg); }
+    100% { transform: rotateX(0deg) rotateY(360deg); }
+}
+
+.color, .color1 { 
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    width: 100%;
+}
+
+.color { 
+    background-color: lightgray; 
+}
+
+.color1 { 
+    background-color:#ffffff; 
+}
+
+.color.fade-in, .color1.fade-in {
+    opacity: 1;
+}
+
+.color.fade-out, .color1.fade-out {
+    opacity: 0;
+}
+
+/* Media query para pantallas verticales */
+@media (orientation: portrait) {
+    .fila {
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .flag {
+        width: 15vw;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 2.5rem;
+    }
+
+    .numero {
+        font-size: 5rem;
+    }
+
+    .titulo {
+        font-size: 5.5rem;
+    }
+
+    .text-3d {
+        font-size: 5rem;
+    }
+
+    .cotizaciones-section {
+        justify-content: center;
+    }
+
+    .form-container, .content {
+        width: 95%;
+        margin: 1vh auto;
+        padding: 15px;
+    }
+
+    .form-container h1, .content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .form-container input[type="number"] {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .form-container button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+
+    
+
+/* Ajustes específicos para 800x600 y 832x624 */
+@media (max-width: 832px) and (max-height: 624px) {
+    .titulo {
+        font-size: 1.5rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 1rem;
+    }
+
+    .numero {
+        font-size: 1.5rem;
+    }
+
+    .text-3d {
+        font-size: 2rem;
+    }
+
+    .form-container, .content {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    .form-container h1, .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-container input[type="number"] {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    .form-container button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajustes específicos para 1280x1024 */
+@media (width: 1280px) and (height: 1024px),
+(width: 1024px) and (height: 768px)
+
+{
+    .cotizaciones-section {
+        justify-content: center;
+    }
+
+    .fila {
+        margin-bottom: 3rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 4rem;
+    }
+
+    .numero {
+        font-size: 5rem;
+    }
+
+    .text-3d {
+        font-size: 3.5rem;
+    }
+
+    .form-container, .content {
+        width: 70%;
+        max-width: 600px;
+    }
+}
+
+
+
+/* Ajustes adicionales para pantallas muy anchas */
+@media (min-aspect-ratio: 16/9) {
+    
+        
+    .titulo {
+        font-size: 5.5rem;
+        padding-top: 2vh;
+    }
+
+    .fila {
+        margin-bottom: 1.5rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 3.5rem;
+    }
+
+    .numero {
+        font-size: 5.5rem;
+    }
+
+    .flag {
+        width: 6vw;
+        margin-right: 15px;
+    }
+
+    .text-3d {
+        font-size: 4.5rem;
+    }
+
+    .animacion {
+        margin-bottom: 1vh;
+    }
+
+    .form-container, .content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 1128px) and (max-height: 634px),
+(max-width: 1280px) and (max-height: 720px)
+
+{
+    .titulo {
+        font-size: 3rem;
+        padding-top: 1vh;
+    }
+
+    .fila {
+        margin-bottom: 2rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 2rem;
+    }
+
+    .numero {
+        font-size: 3.5rem;
+    }
+
+    .flag {
+        width: 6vw;
+        margin-right: 15px;
+    }
+
+    .text-3d {
+        font-size: 3rem;
+    }
+
+    .animacion {
+        margin-bottom: 1vh;
+    }
+
+    .form-container, .content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+@media (min-width: 1366px) and (min-height: 768px){
+    .titulo {
+        font-size: 2.5rem;
+        padding-top: 1vh;
+    }
+
+    .fila {
+        margin-bottom: 1rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 3rem;
+    }
+
+    .numero {
+        font-size: 2rem;
+    }
+
+    .flag {
+        width: 6vw;
+        margin-right: 15px;
+    }
+
+    .text-3d {
+        font-size: 2.5rem;
+    }
+
+    .animacion {
+        margin-bottom: 1vh;
+    }
+
+    .form-container, .content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1600px) and (min-height: 900px)
+{
+    .titulo {
+        font-size: 5.5rem;
+        padding-top: 1vh;
+    }
+
+    .fila {
+        margin-bottom: 1.5rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 2rem;
+    }
+
+    .numero {
+        font-size: 5.5rem;
+    }
+
+    .flag {
+        width: 6vw;
+        margin-right: 15px;
+    }
+
+    .text-3d {
+        font-size: 4.5rem;
+    }
+
+    .animacion {
+        margin-bottom: 1vh;
+    }
+
+    .form-container, .content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+@media (min-width: 1920px) and (min-height: 1080px){
+    .titulo {
+        font-size: 6rem;
+        padding-top: 2vh;
+    }
+
+    .fila {
+        margin-bottom: 1.5rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 4rem;
+    }
+
+    .numero {
+        font-size: 6.5rem;
+    }
+
+    .flag {
+        width: 6vw;
+        margin-right: 15px;
+    }
+
+    .text-3d {
+        font-size: 4.5rem;
+    }
+
+    .animacion {
+        margin-bottom: 1vh;
+    }
+
+    .form-container, .content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+@media (max-width: 1760px) and (max-height: 990px){
+    .titulo {
+        font-size: 5.5rem;
+        padding-top: 1vh;
+    }
+
+    .fila {
+        margin-bottom: 1.5rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 2rem;
+    }
+
+    .numero {
+        font-size: 5rem;
+    }
+
+    .flag {
+        width: 6vw;
+        margin-right: 15px;
+    }
+
+    .text-3d {
+        font-size: 4rem;
+    }
+
+    .animacion {
+        margin-bottom: 1vh;
+    }
+
+    .form-container, .content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+@media (max-width: 1360px) and (max-height: 768px)
+{
+    .titulo {
+        font-size: 3rem;
+        padding-top: 1vh;
+    }
+
+    .fila {
+        margin-bottom: 2rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 2.5rem;
+    }
+
+    .numero {
+        font-size: 4.5rem;
+    }
+
+    .flag {
+        width: 6vw;
+        margin-right: 15px;
+    }
+
+    .text-3d {
+        font-size: 3rem;
+    }
+
+    .animacion {
+        margin-bottom: 1vh;
+    }
+
+    .form-container, .content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+@media (max-width: 800px) and (max-height: 600px) {
+    .titulo {
+        font-size: 3.5rem;
+    }
+
+    #dolar, #euro, #real, #argentino {
+        font-size: 2rem;
+    }
+
+    .numero {
+        font-size: 4rem;
+    }
+
+    .text-3d {
+        font-size: 2.5rem;
+    }
+
+    .form-container, .content {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    .form-container h1, .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-container input[type="number"] {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    .form-container button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+
+ 
+
+
